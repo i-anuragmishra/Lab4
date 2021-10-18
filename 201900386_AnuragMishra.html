@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Demo: Forms</title>
+	<style>
+		body {
+			padding: 0px;
+			margin: 0px;
+		}
+
+		.topnav {
+			background-color: #0851bd;
+			font-weight: bold;
+			overflow: hidden;
+			position: fixed;
+			width: 100%;
+			margin: 0px;
+		}
+
+		.topnav a {
+			float: left;
+			color: #f2f2f2;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+		}
+
+		.topnav a:hover {
+			background-color: #ddd;
+			color: black;
+		}
+
+		.topnav a.active {
+			background-color: #8d12d4;
+			color: white;
+		}
+
+		.container {
+			width: 95.5%;
+			height: 100%;
+			background-color: #e66013;
+			padding: 30px;
+			padding-bottom: 0px;
+			margin-bottom: 0px;
+			border-left: 8px solid #1c10cc;
+			margin-left: 0%;
+			border-radius: 10px;
+			padding-top: 30px;
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 45px;
+			text-decoration: underline;
+			color: white;
+		}
+
+		.innerbox {
+			padding-left: 30px;
+			margin: 10px;
+		}
+
+		.Form {
+			border: 3px solid #f7B733;
+			border-radius: 7px;
+			margin: 15px;
+			padding: 10px;
+			margin-bottom: 30px;
+			background-color: #DE8906;
+		}
+
+		.signuptd {
+			width: 650px;
+		}
+
+		.signintd {
+			width: 600px;
+			height: 200px;
+
+		}
+
+		.signindiv {
+			border-left: 2px solid #f7B733;
+			padding-left: 80px;
+			height: 180px;
+			margin-top: -30px;
+		}
+
+		td {
+			width: 130px;
+			height: 30px;
+		}
+
+		.warningtd {
+			width: 200px;
+		}
+
+		#feedback td {
+			width: 170px;
+		}
+
+		input[type=text] {
+			width: 167px;
+		}
+
+		input[type=password] {
+			width: 167px;
+		}
+
+		.signdiv {
+			width: 90px;
+			font-size: 20px;
+			text-align: center;
+			border-radius: 7px;
+			padding: 5px;
+			margin-left: 65px;
+			margin-top: 10px;
+			border: 2px solid #f7B733;
+			background-color: #99d6ff;
+		}
+
+		.signdiv:hover {
+			background-color: #4abdac;
+		}
+
+		#Submit {
+			width: 90px;
+			font-size: 30px;
+			text-align: center;
+			border-radius: 7px;
+			margin-left: 15px;
+			padding: 10px;
+			border: 2px solid #f7B733;
+			float: left;
+		}
+
+		#Submit:hover {
+			background-color: #99d6ff;
+		}
+
+		#topbtn a {
+			text-decoration: none;
+			float: right;
+			width: 90px;
+			font-size: 30px;
+			text-align: center;
+			border-radius: 7px;
+			margin-right: 15px;
+			padding: 10px;
+			border: 2px solid #f7B733;
+			color: black;
+		}
+
+		#topbtn a:hover {
+			background-color: #99d6ff;
+		}
+
+		.lastdiv {
+			height: 80px;
+		}
+
+		.warninginput {
+			border: 2px solid red;
+		}
+
+
+
+		.mcqwarning1 {
+			position: relative;
+			left: 30%;
+			font-size: 20px;
+			bottom: 60px;
+			color: red;
+		}
+
+		.mcqwarning2 {
+			position: relative;
+			left: 30%;
+			font-size: 20px;
+			bottom: 60px;
+			color: red;
+		}
+
+		.mcqwarning3 {
+			position: relative;
+			left: 30%;
+			font-size: 20px;
+			bottom: 60px;
+			color: red;
+		}
+
+		.mcqwarning4 {
+			position: relative;
+			left: 30%;
+			font-size: 20px;
+			bottom: 60px;
+			color: red;
+		}
+
+		.mcqwarning5 {
+			position: relative;
+			left: 30%;
+			font-size: 20px;
+			bottom: 60px;
+			color: red;
+		}
+
+		.mcqq input {
+			border: 2px solid red;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="topnav">
+		<a href="#Sign">Sign in/Sign up</a>
+		<a href="#Personal">Personal Informations</a>
+
+	</div>
+
+	<div class="container">
+		<div id="Sign"></div>
+		<h1>Demo: Forms</h1>
+
+		<div class="Form" style="height: 250px;">
+			<table style="height: 250px;">
+				<tr>
+					<td class="signuptd" height="200px">
+						<h2>Sign up</h2>
+						<div class="innerbox">
+							<table>
+								<tr>
+									<td><label>Email </label></td>
+									<td><input type="text" name="Username" id="sui1" onclick="clickvalidate(this)"></td>
+									<td id="signupwarning1" class="warningtd">
+										<div id="signupwarning1"></div>
+									</td>
+								</tr>
+								<tr>
+									<td><label>Password </label></td>
+									<td><input type="Password" name="Password" id="sui2" onclick="clickvalidate(this)">
+									</td>
+									<td id="signupwarning2" class="warningtd">
+										<div id="signupwarning2"></div>
+									</td>
+								</tr>
+								<tr>
+									<td><label>Confirm password </label></td>
+									<td><input type="Password" name="Confirm password" id="sui3"
+											onclick="clickvalidate(this)"></td>
+									<td id="signupwarning3" class="warningtd">
+										<div id="signupwarning3"></div>
+									</td>
+								</tr>
+
+								<tr>
+									<td></td>
+									<td>
+										<div class="signdiv" onclick="signup()" id="signupbtn">Sign up</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+					<td class="signintd">
+						<div class="signindiv">
+							<h2>Sign in</h2>
+							<div class="innerbox">
+								<table>
+									<tr>
+										<td><label>Email </label></td>
+										<td><input type="text" name="Username" id="sii1" onclick="clickvalidate(this)">
+										</td>
+										<td id="signinwarning1" class="warningtd">
+											<div id="signinwarning1"></div>
+										</td>
+									</tr>
+									<tr>
+										<td><label>Password </label></td>
+										<td><input type="Password" name="Password" id="sii2"
+												onclick="clickvalidate(this)"></td>
+										<td id="signinwarning2" class="warningtd">
+											<div id="signinwarning2"></div>
+										</td>
+									</tr>
+
+									<tr>
+										<td></td>
+										<td>
+											<div class="signdiv" onclick="signin()">Sign in</div>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+
+			<div id="Personal"></div>
+		</div>
+
+
+		<div class="Form">
+			<h2>Personal Informations</h2>
+			<div class="innerbox">
+				<table>
+					<tr>
+						<td><label>Name: </label></td>
+						<td><input type="text" name="Name" id="nameinput" onclick="clickvalidate(this)"></td>
+						<td class="warningtd">
+							<div id="namewarning"></div>
+						</td>
+					</tr>
+					<tr>
+						<td><label>Roll no.: </label></td>
+						<td><input type="text" name="" id="rollinput" onclick="clickvalidate(this)"></td>
+						<td class="warningtd">
+							<div id="rollwarning"></div>
+						</td>
+					</tr>
+					<tr>
+						<td><label>Branch: </label></td>
+						<td><input type="text" name="" id="branchinput" onclick="clickvalidate(this)"></td>
+						<td class="warningtd">
+							<div id="branchwarning"></div>
+						</td>
+					</tr>
+					<tr>
+						<td><label>Semeter: </label></td>
+						<td><input type="text" name="" id="seminput" onclick="clickvalidate(this)"></td>
+						<td class="warningtd">
+							<div id="semwarning"></div>
+						</td>
+					</tr>
+					<tr>
+						<td><label>DOB: </label></td>
+						<td>
+							<select>
+								<option>Day</option>
+								<option>01</option>
+								<option>02</option>
+								<option>03</option>
+								<option>04</option>
+								<option>05</option>
+								<option>06</option>
+								<option>07</option>
+								<option>08</option>
+								<option>09</option>
+								<option>10</option>
+								<option>11</option>
+								<option>12</option>
+								<option>13</option>
+								<option>14</option>
+								<option>15</option>
+								<option>16</option>
+								<option>17</option>
+								<option>18</option>
+								<option>19</option>
+								<option>20</option>
+								<option>21</option>
+								<option>22</option>
+								<option>23</option>
+								<option>24</option>
+								<option>25</option>
+								<option>26</option>
+								<option>27</option>
+								<option>28</option>
+								<option>29</option>
+								<option>30</option>
+								<option>31</option>
+							</select>
+							<select>
+								<option>Month</option>
+								<option>Jan</option>
+								<option>Feb</option>
+								<option>Mar</option>
+								<option>Apr</option>
+								<option>May</option>
+								<option>Jun</option>
+								<option>Jul</option>
+								<option>Aug</option>
+								<option>Sep</option>
+								<option>Oct</option>
+								<option>Nov</option>
+								<option>Dec</option>
+							</select>
+							<select>
+								<option>Year</option>
+								<option>2018</option>
+								<option>2017</option>
+								<option>2016</option>
+								<option>2015</option>
+								<option>2014</option>
+								<option>2013</option>
+								<option>2012</option>
+								<option>2011</option>
+								<option>2010</option>
+								<option>2009</option>
+								<option>2008</option>
+								<option>2007</option>
+								<option>2006</option>
+								<option>2005</option>
+								<option>2004</option>
+								<option>2003</option>
+								<option>2002</option>
+								<option>2001</option>
+								<option>2000</option>
+								<option>1999</option>
+								<option>1998</option>
+								<option>1997</option>
+								<option>1996</option>
+								<option>1995</option>
+								<option>1994</option>
+								<option>1993</option>
+								<option>1992</option>
+								<option>1991</option>
+								<option>1990</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label>Mob no.: </label></td>
+						<td><input type="text" name="Mob" id="mobinput" onclick="clickvalidate(this)"><br></td>
+						<td class="warningtd">
+							<div id="mobwarning"></div>
+						</td>
+					</tr>
+					<tr>
+						<td><label>Address: </label></td>
+						<td><textarea rows="3" cols="60"></textarea></td>
+					</tr>
+
+
+					<div class="lastdiv">
+						<div id="Submit" onclick="submitbtn()"><a href="" id="submitlink"
+								style="text-decoration: none; color:black;">Submit</a></div>
+						<div id="topbtn"><a href="#top">Top</a></div>
+					</div>
+			</div>
+</body>
+
+</html>
